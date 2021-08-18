@@ -38,8 +38,10 @@ for(let i=0;i<5;i++){
 // Exe2) o programa retorna quantos posts foram feitos em todas as redes sociais
 // Exe3) o usuário informa informa o login do usuário, e o programa retorna quantos posts ele fez
 // Exe4) o programa retorna quantos posts foram feitos por cada usuário
-let cogido = Number(prompt(`Informe o código da rede social`))
-let conta = 0
+let  codigo  =  Number ( prompt ( `Informe o código da rede social` ) )
+
+let  conta  =  0
+
 for ( let  i = 0 ; i < 5 ; i ++ ) {  // percore o vetor vetorUsuários
     if  ( vetorUsuarios [ i ] . codigoRedeSocial  ==  codigo ) {  // encontrei
         conta  =  conta  +  vetorUsuários [ i ] . qtdePosts
@@ -52,3 +54,12 @@ for ( let  i = 0 ; i < 5 ; i ++ ) {  // percore o vetor vetorUsuários
       console . log ( `A qtde de post na rede social $ { codigo } foi $ { conta } ` )
   }
 
+  for (let i=0;i<5;i++){ // para cada rede social
+    let conta = 0  
+    for(let j=0;j<5;j++){ // procura nos usuários
+      if (vetorRedesSociais[i].codigo == vetorUsuarios[j].codigoRedeSocial){
+          conta = conta + vetorUsuarios[i].qtdePosts
+      }
+      console.log(`A qtde de post da rede social ${vetorRedesSociais[i].codigo} é ${conta}`)
+    }
+}
