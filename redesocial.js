@@ -131,6 +131,6 @@ let gerenciaRedesSociais = () => {
           qtde: vetorUsuarios[i].qtdePosts
       })
   }
-  console.log(vetorUsuariosPosts)
+  alert(vetorUsuariosPosts)
 }
 
