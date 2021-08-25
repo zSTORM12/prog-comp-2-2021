@@ -112,6 +112,25 @@ let gerenciaRedesSociais = () => {
       alert(`Usuário não encontrado`)
   }
   // Exe4) o programa retorna quantos posts foram feitos por cada usuário
+  let vetorUsuariosPosts = []
+  for(let i=0; i<5; i++){ // para cada usuário do vetor
+    let achou = false // nao achou
+    for(let j=0;j <vetorUsuariosPosts.length;j++){ //verifica se o usuário existe
+
+        if (vetorUsuarios[i].login == vetorUsuariosPosts[i].login){ // usuário ja esxiste
+
+            //soma a qtde de posts do usuário
+            vetorUsuariosPosts[j].qtde = vetorUsuariosPosts[j].qtde + vetorUsuarios[i].qtdePosts
+            achou = true
+        }
+    }
+  }
+  if(!achou){
+      vetorUsuariosPosts.push({
+          login: vetorUsuarios[i].login,
+          qtde: vetorUsuarios[i].qtdePosts
+      })
+  }
 
 }
 
