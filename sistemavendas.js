@@ -4,7 +4,7 @@ let sistemaVendas = () => {
     let vetVendedores = []
     let vetVendas = []
     do {
-        opcao = Number(prompt(`Informe: \n1. Cadastrar vendedor \n2. Cadastrar venda \n3. Procura venda \n4. Soma venda por vendedor \n5.  \n6. Sair`))
+        opcao = Number(prompt(`Informe: \n1. Cadastrar vendedor \n2. Cadastrar venda \n3. Procura venda \n4. Soma venda por vendedor \n5. Vendedor mais vendeu  \n6. Sair`))
         switch(opcao){
             case 1: let objeto = {
                 codigo: Number(prompt(`Informe código`)),
@@ -81,9 +81,17 @@ let sistemaVendas = () => {
                         }
                         break
                 case 5: let mes5 = Number(prompt(`Informe o mês de interesse`))
+                        let maiorValor = 0
+                        let vendedorMaisVendeu = 0
                         for(let i=0; i<vetVendas.length; i++){
-                            
+                            if(vetVendas[i].mes === mes5){
+                                if(vetVendas[i].valor > maiorValor){
+                                    maiorValor = vetVendas[i].valor // atualiza o maior valor
+                                    vendedorMaisVendeu = vetVendas[i].codigo
+                                }
+                            }
                         }
+                        console.log(`O vendedor que mais vendeu foi ${vendedorMaisVendeu} com ${maiorValor}`)
                         break
                 case 6: alert(`O programa será encerrado`)
                         break
