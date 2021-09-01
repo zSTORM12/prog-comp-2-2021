@@ -53,7 +53,7 @@ let sistemaVendas = () => {
                     // percorre vetor de vendas
                     let achou3 = false
                     for(let i=0; i<vetVendas.length; i++){
-                        if((vetVendas[i].codigo == codigo) && (vetVendas[i].mes == mes)){
+                        if((vetVendas[i].codigo === codigo) && (vetVendas[i].mes == mes)){
                             console.log(`O valor da venda do funcionário ${codigo} no mês ${mes} foi ${vetVendas[i].valor}`)
                             achou3 = true
                         }
@@ -63,7 +63,24 @@ let sistemaVendas = () => {
                         console.log(`Venda não encontrada para este funcionário neste mês`)
                     }
                     break
-                case 4: alert(`O programa será encerrado`)
+                case 4: let codigo4 = Number(prompt(`Informe o código do vendedor`))
+                        // percorre o vetor de vendas
+                        let soma = 0
+                        let achou4 = 0
+                        for(let i=0; i<vetVendas.length; i++){
+                            if(vetVendas[i].codigo4 === codigo4){
+                                soma = soma + vetVendas[i].valor
+                                achou4 = true
+                            }
+                        }
+                        if(!achou4){
+                            console.log(`Venda não encontrada para esse funcionário`)
+                        }
+                        else{
+                            console.log(`O total de vendas do vendedor ${codigo4} foi ${soma}`)
+                        }
+                        break
+                case 5: alert(`O programa será encerrado`)
                         break
             default: alert(`Opção inválida`)
         }
